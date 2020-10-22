@@ -9,10 +9,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let u of users$ | async">
-      <td>{{u.username}}</td>
-      <td>{{u.password}}</td>
-      <td style="text-transform: capitalize">{{u.roles.join(', ') | lowercase}}</td>
+    <tr *ngFor="let u of users">
+      <td>{{u?.username}}</td>
+      <td>{{u?.password}}</td>
+      <td style="text-transform: capitalize">{{u?.roles.join(', ') | lowercase}}</td>
     </tr>
   </tbody>
 </table>

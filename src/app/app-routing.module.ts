@@ -4,6 +4,7 @@ import {UsersComponent} from './users/users.component';
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './security/auth.guard';
 import {SignInComponent} from './sign-in/sign-in.component';
+import {Error403Component} from './error403/error403.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'signin',
     component: SignInComponent
+  },
+  {
+    path: '403',
+    component: Error403Component
   }
 ];
 
