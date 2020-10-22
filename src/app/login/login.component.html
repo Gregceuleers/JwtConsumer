@@ -10,6 +10,7 @@
     <button type="submit" class="btn-flat">Se logger</button>
   </form>
   <div class="card-panel center">
+    <div class="red white-text" *ngIf="showMessageError">Problème de récupération du token depuis l'API</div>
     <p>Pas encore inscrit ?</p>
     <a routerLink="/signin">S'inscrire</a>
   </div>
