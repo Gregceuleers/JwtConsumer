@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('token', token);
 
         if (token != null) {
+          this.authService.isLogged = true;
           this.router.navigate(['users']).then();
         } else {
           this.showMessageError = true;
