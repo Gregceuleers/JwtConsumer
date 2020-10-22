@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -14,7 +14,10 @@ export class AuthenticationService {
   ) {
   }
 
-  log(data: FormData): Observable<string> {
-    return this.httpClient.post<string>(this.BASE_URL, data);
+  log(data: FormData): Observable<HttpResponse<Response>> {
+    return this.httpClient.post<Response>(this.BASE_URL, data, {
+      observe: 'response',
+      responseType: 'json'
+    });
   }
 }
