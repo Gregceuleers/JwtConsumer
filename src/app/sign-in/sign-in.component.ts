@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {AuthenticationService} from '../login/authentication.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,9 +10,12 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 export class SignInComponent implements OnInit {
 
   form: FormGroup;
+  showMessageSuccess = false;
+  showMessageFail = false;
 
   constructor(
-    public builder: FormBuilder
+    public builder: FormBuilder,
+    public authService: AuthenticationService
   ) {
   }
 
@@ -24,5 +28,14 @@ export class SignInComponent implements OnInit {
 
   signin(): void {
 
+    if (this.form.valid) {
+      this.authService.signin(this.form.value as FormData).subscribe((result: boolean) => {
+        if (result) {
+          this.showMessageSuccess = result;
+        } else {
+          this.showMessageFail = result;
+        }
+      });
+    }
   }
 }

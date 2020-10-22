@@ -1,5 +1,5 @@
 <div class="container">
-  <h3>Login</h3>
+  <h3>Sign In</h3>
   <form [formGroup]="form" (submit)="signin()">
     <label for="username">
       Nom utilisateur : <input type="text" id="username" formControlName="username">
@@ -7,6 +7,10 @@
     <label for="pwd">
       Mot de passe : <input type="password" id="pwd" formControlName="password">
     </label>
-    <button type="submit" class="btn-flat">Se logger</button>
+    <button type="submit" class="btn-flat">S'enregistrer</button>
   </form>
+  <div class="card-panel center">
+    <div class="green white-text" *ngIf="showMessageSuccess">Utilisateur créé !</div>
+    <div class="red white-text" *ngIf="showMessageFail">Problème de création de l'utilisateur</div>
+  </div>
 </div>
