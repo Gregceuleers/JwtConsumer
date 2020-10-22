@@ -1,0 +1,17 @@
+<h4>Liste des utilisateurs</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Nom d'utilisateur</th>
+      <th>Mot de passe</th>
+      <th>Rôles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of users$ | async">
+      <td>{{u.username}}</td>
+      <td>{{u.password}}</td>
+      <td style="text-transform: capitalize">{{u.roles.join(', ') | lowercase}}</td>
+    </tr>
+  </tbody>
+</table>
