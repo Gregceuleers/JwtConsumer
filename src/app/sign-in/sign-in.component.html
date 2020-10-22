@@ -1,0 +1,12 @@
+<div class="container">
+  <h3>Login</h3>
+  <form [formGroup]="form" (submit)="signin()">
+    <label for="username">
+      Nom utilisateur : <input type="text" id="username" formControlName="username">
+    </label>
+    <label for="pwd">
+      Mot de passe : <input type="password" id="pwd" formControlName="password">
+    </label>
+    <button type="submit" class="btn-flat">Se logger</button>
+  </form>
+</div>
